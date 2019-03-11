@@ -1,0 +1,4 @@
+-- sql配置文件
+-- mysql default 3306
+-- sqlServer default 1433
+-- oracle default 1521

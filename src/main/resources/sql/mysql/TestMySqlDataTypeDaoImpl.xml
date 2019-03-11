@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <content id="selectById" note="根据主键查询实体">
+        <![CDATA[
+            select * from test_data_type where id = ?
+        ]]>
+    </content>
+
+    <content id="insertEntity" note="新增对象抛出异常">
+        <![CDATA[
+            insert into test_data_type(username, age, amount, score, weight, gmt_create) values(?,?,?,?,?,?)
+        ]]>
+    </content>
+
+    <content id="listEntities" note="查询所有">
+        <![CDATA[
+            select * from test_data_type
+        ]]>
+    </content>
+
+    <content id="updateEntity" note="修改对象">
+        <![CDATA[
+            update test_data_type set username = ?, age = ?, amount = ?, weight = ?, score = ?, gmt_modified = ?, is_lock = ? where id = ?
+        ]]>
+    </content>
+
+    <content id="deleteById" note="根据主键删除对象">
+        <![CDATA[
+            delete from test_data_type where id = ?
+        ]]>
+    </content>
+</root>
+
+
+

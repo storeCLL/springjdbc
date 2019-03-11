@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <content id="insert" note="新增对象，不包含修改时间和是否已锁定账号">
+        <![CDATA[
+            insert into back_sys_user(id, username, salt, password, gmt_create) values(?,?,?,?,?)
+        ]]>
+    </content>
+
+    <content id="insertByEntity" note="新增对象">
+        <![CDATA[
+            insert into back_sys_user(id, username, salt, password, gmt_create, gmt_modified, is_lock) values(?,?,?,?,?,?,?)
+        ]]>
+    </content>
+
+    <content id="update" note="修改对象，不包含创建时间和账号是否锁定">
+        <![CDATA[
+            update back_sys_user set username = ?, salt = ?, password = ?, gmt_modified = ? where id = ?
+        ]]>
+    </content>
+
+    <content id="updateByEntity" note="修改对象，包含账号是否锁定">
+        <![CDATA[
+            update back_sys_user set username = ?, salt = ?, password = ?, gmt_modified = ?, is_lock = ? where id = ?
+        ]]>
+    </content>
+
+    <content id="selectById" note="根据ID查询对象">
+        <![CDATA[
+            select * from back_sys_user where id = ?
+        ]]>
+    </content>
+
+    <content id="selectAll" note="查询所有">
+        <![CDATA[
+            select * from back_sys_user
+        ]]>
+    </content>
+
+    <content id="deleteById" note="根据ID删除记录">
+        <![CDATA[
+            DELETE FROM back_sys_user WHERE id = ?
+        ]]>
+    </content>
+
+    <content id="selectForPage" note="分页查询数据">
+        <![CDATA[
+            select * from back_sys_user order by gmt_create desc
+        ]]>
+    </content>
+
+</root>
